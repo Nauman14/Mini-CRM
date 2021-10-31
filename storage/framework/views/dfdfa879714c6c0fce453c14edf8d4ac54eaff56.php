@@ -10,7 +10,7 @@
     <?php $__env->stopSection(); ?>
         <?php $__env->startSection('content'); ?>
             <h1>Edit Company</h1>
-            <form method="POST" action="<?php echo e(route('company.update',$company->id)); ?>" enctype="multipart/form-data">
+            <form method="POST" action="<?php echo e(route('company.update',base64_encode($company->id))); ?>" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <?php echo method_field('PATCH'); ?>
                 <div class="form-group">
