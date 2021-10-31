@@ -35,8 +35,12 @@ Route::middleware(['auth'])->group(function (){
     Route::delete('/company/{company}/destroy',[CompanyController::class, 'destroy'])->name('company.destroy');
 
     Route::get('/employee/create',[EmployeeController::class, 'create'])->name('employee.create');
+    Route::get('/employee/{employee}/view',[EmployeeController::class, 'show'])->name('employee.show');
     Route::get('/employee',[EmployeeController::class, 'index'])->name('employee.index');
     Route::post('/employee',[EmployeeController::class, 'store'])->name('employee.store');
+    Route::get('/employee/{employee}/edit',[EmployeeController::class, 'edit'])->name('employee.edit');
+    Route::patch('/employee/{employee}/update',[EmployeeController::class, 'update'])->name('employee.update');
+    Route::delete('/employee/{employee}/destroy',[EmployeeController::class, 'destroy'])->name('employee.destroy');
 
     Route::get('/logout',[LogoutController::class, 'logout'])->name('logout');
 });

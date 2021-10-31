@@ -4,7 +4,7 @@
     @endsection
         @section('content')
             <h1>Edit Company</h1>
-            <form method="POST" action="{{route('company.update',$company->id)}}" enctype="multipart/form-data">
+            <form method="POST" action="{{route('company.update',base64_encode($company->id))}}" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
                 <div class="form-group">

@@ -112,7 +112,7 @@ class CompanyController extends Controller
         if ($request->company_logo)
             $validated['company_logo'] = $request->company_logo->store('images');
 
-        $company = Company::findOrFail($id);
+        $company = Company::findOrFail(base64_decode($id));
         $company->CompanyTitle = $validated['companyTitle'];
         $company->Email = $request->companyEmail;
         $company->CompanyLogo = isset($validated['company_logo']) ? $validated['company_logo'] : "";
